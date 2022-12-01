@@ -1,8 +1,8 @@
 # MVC Todo List
 
 ### Description
-    Utilizing MongoDB, NodeJS and Express, a to-do list was created with a log in and sign up function that would allow users to collaboratively create tasks, mark them as complete or uncomplete, and then remove them from the list. Users can only modify their own tasks but are unable to remove tasks that were claimed by other users.
-    The todo-list was also implemeted with Jquery, utilizing JSON files as the model. But a user-login feature was not implemented with this.
+Utilizing MongoDB, NodeJS and Express, a to-do list was created with a log in and sign up function that would allow users to collaboratively create tasks, mark them as complete or uncomplete, and then remove them from the list. Users can only modify their own tasks but are unable to remove tasks that were claimed by other users.
+The todo-list was also implemeted with Jquery, utilizing JSON files as the model. But a user-login feature was not implemented with this.
 
 ### Code Dependencies
 1. MongoDB for local database
