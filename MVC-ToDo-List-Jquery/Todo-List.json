@@ -1,0 +1,24 @@
+[
+    {
+        
+        "identifier": "1",
+        "task creator": "Bob",
+        "task claimer": "Alice",
+        "task description": "Clean Tables",
+        "task state":"claimed"
+    },
+    {
+        "identifier": "2",
+        "task creator": "James",
+        "task claimer": "Joe",
+        "task description": "Sweep the floor",
+        "task state":"finished"
+    },
+    {
+        "identifier": "3",
+        "task creator": "Jem",
+        "task claimer": "Lisa",
+        "task description": "Pack the furniture",
+        "task state":"Unclaimed"
+    }
+]

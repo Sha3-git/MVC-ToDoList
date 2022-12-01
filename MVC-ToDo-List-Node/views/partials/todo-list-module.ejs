@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="list1">
+        <% for (let item of itemList) { %>
+            <% if (item.isTaskClaimed === false) { %>
+                <form action="/claimed" method="post">
+                    <input type="hidden" name="id" value ="<%= item._id %>">
+                    <div class="input-group mb-2">
+                        <input type="text" disabled class="form-control" placeholder='<%= item.text %>' aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit" >Claim</button>
+                    </div>
+                </form>
+            <%}%>
+            <% if ((item.isTaskClaimed === true) && (item.isTaskDone === false) && (item.claimingUser === username)) { %>
+                <form action="/abandonorcomplete" method="post">
+                    <input type="hidden" name="id" value ="<%= item._id %>">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" name="check" onChange="this.form.submit()"
+                                aria-label="Checkbox for following text input" >
+                        </div>
+                        <input type="text" disabled class="form-control" placeholder='<%= item.text %>'
+                            aria-label="Text input with checkbox">
+                        <button class="btn btn-outline-secondary" type="submit" name="abandon" value="on" id="button-addon2">Abandon</button>
+                    </div>
+                </form>
+            <%}%>
+
+
+            <% if ((item.isTaskClaimed === true) && (item.isTaskDone === false) && (item.claimingUser !== username)) { %>
+                <form action="/abandonorcomplete" method="post">
+                    <input type="hidden" name="id" value ="<%= item._id %>">
+                    <div class="input-group mb-3">
+                        <input type="text" disabled class="form-control" placeholder='<%= item.text %>'
+                            aria-label="Text input with checkbox">
+                    </div>
+                </form>
+            <%}%>
+
+            
+            
+            <% if ((item.isTaskClaimed === true)  && (item.isTaskDone === true) && (item.isTaskCleared === false)&& (item.claimingUser === username)) { %>
+                <form action="/unfinish" method="post">
+                    <input type="hidden" name="id" value ="<%= item._id %>">
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" checked type="checkbox"  onChange="this.form.submit()"
+                                aria-label="Checkbox for following text input">
+                        </div>
+                        <input type="text" disabled class="form-control" id="intext" placeholder='<%= item.text %>'
+                            aria-label="Text input with checkbox">
+                    </div>
+                </form>
+            <%}%>
+        <% if ((item.isTaskClaimed === true)  && (item.isTaskDone === true) && (item.isTaskCleared === false)&& (item.claimingUser !== username)) { %>
+            <form action="/unfinish" method="post">
+                <input type="hidden" name="id" value ="<%= item._id %>">
+                <div class="input-group mb-3">
+                    <input type="text" disabled class="form-control" id="intext" placeholder='<%= item.text %>'
+                        aria-label="Text input with checkbox">
+                </div>
+            </form>
+        <%}%>
+    <% } %>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script type="text/JSON" src="userTask.json" charset="utf-8"></script></body>
+</body>
+</html>

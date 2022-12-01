@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+h1{
+    text-align: center;
+    margin-bottom: 60px;
+}
+#to-do{
+    margin-top: 100px;
+    text-align: center;
+}
+body{
+    max-width: 500px;
+    margin: auto;
+    font-family: Poppins;
+
+}
+.container{
+    margin-top: 30px;
+    width: 430px;
+    background-color: #f0f5f9;
+    text-align: center;
+    padding: 0%;
+    border-radius: 5px;
+    box-shadow:5px 4px 15px 2px darkgray;
+}
+#b1-title{
+    margin: 20px;
+}
+#signin-button{
+    margin-bottom: 20px;                                            
+}
+#login-button{
+    margin-bottom: 20px;
+}
+#InputPassword2{
+   background-color: #fcfcc4;
+   border-color: #f3e4c4;
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+#c1{
+    height: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 3px;
+}
+
+.card-body{
+    height: 100px;
+    padding: 10px;
+}
+#logout-button{
+    margin-top: 20px;
+    align-self: center;
+}
+
+#abandon-button{
+    border-radius: 3px;
+    border-width: 0px;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+#b3{
+    margin-top: 50px;
+    margin-left: -20%;
+    margin-right: auto;
+    background-color: #f0f5f9;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    border-radius: 5px;
+    width: 700px;
+    height: 375px;
+    box-shadow:10px 10px 25px 2px darkgray;
+}
+#filled-task2::placeholder{
+    text-decoration: line-through;
+}
